@@ -1,0 +1,13 @@
+.item{
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+.item p{
+  font-size: 26px;
+  display:inline;
+}
+
+.container{
+  padding:1px;
+}
