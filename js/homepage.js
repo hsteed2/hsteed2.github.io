@@ -1,22 +1,21 @@
 $("p").click(function() {
   alert("test!!");
 });
-
-
-var playstate = 
+var speed = [(Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1), (Math.floor(Math.random() * 3) + 1)];
+var playstate = ["forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards"];
 
 function menuanim(){
 for(var i = 0; i < $(".item").length; i++){
 var left = parseInt($($(".item").get(i)).css("padding-left"));
 if(playstate[i] == "forwards"){
-  if(left < Math.round(window.innerWidth - (parseInt($($(".item p").get(i)).css("width")) + 5))){
-    left++;
+  if(left < Math.round(window.innerWidth - (parseInt($($(".item p").get(i)).css("width")) + 10))){
+  left += speed[i];
   $($(".item").get(i)).css("padding-left",  left);
 }else{
     playstate[i] = "backwards";}}
 else{
   if(left != 0){
-    left--;
+  left -= speed[i];
     $($(".item").get(i)).css("padding-left",  left);}
     else{
     playstate[i] = "forwards";
