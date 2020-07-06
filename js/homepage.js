@@ -3,8 +3,8 @@ $("p").click(function() {
 });
 
 
+var playstate = 
 
-var playstate = ["forwards", "forwards", "forwards", "forwards", "forwards", "forwards"];
 function menuanim(){
 for(var i = 0; i < $(".item").length; i++){
 var left = parseInt($($(".item").get(i)).css("padding-left"));
