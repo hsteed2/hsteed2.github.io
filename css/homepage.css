@@ -5,9 +5,16 @@
 
 .item p{
   font-size: 26px;
+margin:1px;
+border-width:1px;
   display:inline;
 }
 
 .container{
   padding:1px;
+}
+
+.item p:hover{
+margin:0;
+border-style:solid;
 }
