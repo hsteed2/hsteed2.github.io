@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+//Getting The Widget
+fetch('bobs-blocks-level.bbloks');
+  .then(response => response.json())
+  .then(data => set(data));
+const set = (data) => {
+  alert(data.level-1.1,1);
+}
+</script>
+  </body>
+</html>
