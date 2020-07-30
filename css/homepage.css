@@ -1,20 +1,20 @@
-.item{
-  margin-bottom:10px;
-  margin-top:10px;
+.item {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.item p{
+.item p {
   font-size: 26px;
-margin:1px;
-border-width:1px;
-  display:inline;
+  margin: 1px;
+  border-width: 1px;
+  display: inline;
 }
 
-.container{
-  padding:1px;
+.container {
+  padding: 1px;
 }
 
-.item p:hover{
-margin:0;
-border-style:solid;
+.item p:hover {
+  margin: 0;
+  border-style: solid;
 }

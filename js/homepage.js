@@ -6,23 +6,37 @@ $("p").mouseleave(function() {
  anim = setInterval(menuanim, 40);
 });
 
+function isLess(width, padding){
+if(window.innerWidth - width > padding){
+return true;}
+else{
+return false;	
+}}
+
+
+
 //Left - Right
-var speed = [(Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1), (Math.floor(Math.random() * 4) + 1)];
+var speed = [(Math.random() * 4.65) + 1, (Math.random() * 2.565) + 1, (Math.random() * 4.765) + 1, (Math.random() * 3.9323432) + 1, (Math.random() * 2.7) + 1, (Math.random() * 4.88) + 1, (Math.random() * 2.65) + 1, (Math.random() * 4.65) + 1, (Math.random() * 4.65) + 1, (Math.random() * 3.65) + 1];
 var playstate = ["forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards", "forwards"];
 
 function menuanim(){
 for(var i = 0; i < $(".item").length; i++){
-var left = parseInt($($(".item").get(i)).css("padding-left"));
+	
 if(playstate[i] == "forwards"){
-  if(left < Math.round(window.innerWidth - (parseInt($($(".item p").get(i)).css("width")) + 10))){
-  left += speed[i];
-  $($(".item").get(i)).css("padding-left",  left + "px");
-}else{
-    playstate[i] = "backwards";}}
+
+  if(isLess($($(".item").get(i)).css("width"), $($(".item").get(i)).css("padding-left"))){
+  $($(".item").get(i)).css("padding-left") += (speed[i] + "px");
+}
+
 else{
-  if(left != 0){
-  left -= speed[i];
-    $($(".item").get(i)).css("padding-left",  left + "px");}
+    playstate[i] = "backwards";}}
+
+
+else{
+
+  if($($(".item").get(i)).css("padding-left") != 0){
+    $($(".item").get(i)).css("padding-left")  -= (speed[i] + "px");}
+
     else{
     playstate[i] = "forwards";
   }}}}
@@ -32,4 +46,3 @@ var anim = setInterval(menuanim, 40);
 //Up - Down
 
 //Rotating
-
